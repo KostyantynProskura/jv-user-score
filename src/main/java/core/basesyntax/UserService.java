@@ -7,9 +7,7 @@ public class UserService {
 
         for (String record : records) {
             if (record.substring(0,record.indexOf(":")).equals(email)) {
-                return Integer.parseInt(record.substring(record.indexOf(":") + 1,
-                                                        record.indexOf(":")
-                                                        + (record.length() - record.indexOf(":"))));
+                return Integer.parseInt(record.substring(record.indexOf(":") + 1));
             }
         }
         throw new UserNotFoundException("User with given email doesn't exist");
